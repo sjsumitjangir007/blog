@@ -5,12 +5,15 @@
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
     </head>
     <body>
-        <img src="/assets/favicon.png" />
-        <img src="/assets/sms_icon_favicon.svg" alt="My Happy SVG"/>
         <h1>
             {{ .title }}
         </h1>
-        <p>Using index/index.tmpl</p>
+        
+        <footer>
+            <a href="/">Home</a>
+            <a href="/posts">redirect to see Posts</a>
+            <a href="/users/index">redirect to User</a>
+        </footer>
     </body>
 </html>
 {{ end }}
