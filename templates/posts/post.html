@@ -1,14 +1,16 @@
 {{ define "posts/post.html" }}
+<!DOCTYPE html>
 <html class="dark">
 
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
+ 
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="apple-touch-icon" href="/assets/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000"/>
 
     <!-- Primary Meta Tags -->
     <title>{{.metadata.Title}}</title>
@@ -18,14 +20,14 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="blog" />
-    <meta property="og:url" content={canonicalURL} />
+    <!-- <meta property="og:url" content={canonicalURL} /> -->
     <meta property="og:title" content={{.metadata.Title}} />
     <meta property="og:description" content={{.metadata.Description}} />
     <meta property="og:image" content="https://astro.build/social.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
+    <!-- <meta property="twitter:url" content={canonicalURL} /> -->
     <meta property="twitter:title" content={{.metadata.Title}} />
     <meta property="twitter:description" content={{.metadata.Description}} />
     <meta property="twitter:image" content="https://astro.build/social.png" />
@@ -51,1201 +53,107 @@
     </script>
     <link rel="stylesheet" href="/assets/typography.min.css" />
 
-    <style>
-        .POMYoNHqN8pOsNYFYFHr,
-        .POMYoNHqN8pOsNYFYFHr:before {
-            background: inherit;
-            height: 8px;
-            position: absolute;
-            width: 8px
-        }
-
-        .POMYoNHqN8pOsNYFYFHr {
-            visibility: hidden
-        }
-
-        .POMYoNHqN8pOsNYFYFHr:before {
-            content: "";
-            transform: rotate(45deg);
-            visibility: visible
-        }
-
-        [data-tooltip-style^=light]+.Usqns9w__onp5CWoXDJ0>.POMYoNHqN8pOsNYFYFHr:before {
-            border-color: #e5e7eb;
-            border-style: solid
-        }
-
-        [data-tooltip-style^=light]+.Usqns9w__onp5CWoXDJ0[data-popper-placement^=top]>.POMYoNHqN8pOsNYFYFHr:before {
-            border-bottom-width: 1px;
-            border-right-width: 1px
-        }
-
-        [data-tooltip-style^=light]+.Usqns9w__onp5CWoXDJ0[data-popper-placement^=right]>.POMYoNHqN8pOsNYFYFHr:before {
-            border-bottom-width: 1px;
-            border-left-width: 1px
-        }
-
-        [data-tooltip-style^=light]+.Usqns9w__onp5CWoXDJ0[data-popper-placement^=bottom]>.POMYoNHqN8pOsNYFYFHr:before {
-            border-left-width: 1px;
-            border-top-width: 1px
-        }
-
-        [data-tooltip-style^=light]+.Usqns9w__onp5CWoXDJ0[data-popper-placement^=left]>.POMYoNHqN8pOsNYFYFHr:before {
-            border-right-width: 1px;
-            border-top-width: 1px
-        }
-
-        .Usqns9w__onp5CWoXDJ0[data-popper-placement^=top]>.POMYoNHqN8pOsNYFYFHr {
-            bottom: -4px
-        }
-
-        .Usqns9w__onp5CWoXDJ0[data-popper-placement^=bottom]>.POMYoNHqN8pOsNYFYFHr {
-            top: -4px
-        }
-
-        .Usqns9w__onp5CWoXDJ0[data-popper-placement^=left]>.POMYoNHqN8pOsNYFYFHr {
-            right: -4px
-        }
-
-        .Usqns9w__onp5CWoXDJ0[data-popper-placement^=right]>.POMYoNHqN8pOsNYFYFHr {
-            left: -4px
-        }
-
-        .Usqns9w__onp5CWoXDJ0.p3NM1OB16vfk_yD2siUB>.POMYoNHqN8pOsNYFYFHr:before {
-            visibility: hidden
-        }
-
-        *,
-        :after,
-        :before {
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            --tw-scale-x: 1;
-            --tw-scale-y: 1;
-            --tw-pan-x: ;
-            --tw-pan-y: ;
-            --tw-pinch-zoom: ;
-            --tw-scroll-snap-strictness: proximity;
-            --tw-ordinal: ;
-            --tw-slashed-zero: ;
-            --tw-numeric-figure: ;
-            --tw-numeric-spacing: ;
-            --tw-numeric-fraction: ;
-            --tw-ring-inset: ;
-            --tw-ring-offset-width: 0px;
-            --tw-ring-offset-color: #fff;
-            --tw-ring-color: rgba(63, 131, 248, .5);
-            --tw-ring-offset-shadow: 0 0 #0000;
-            --tw-ring-shadow: 0 0 #0000;
-            --tw-shadow: 0 0 #0000;
-            --tw-shadow-colored: 0 0 #0000;
-            --tw-blur: ;
-            --tw-brightness: ;
-            --tw-contrast: ;
-            --tw-grayscale: ;
-            --tw-hue-rotate: ;
-            --tw-invert: ;
-            --tw-saturate: ;
-            --tw-sepia: ;
-            --tw-drop-shadow: ;
-            --tw-backdrop-blur: ;
-            --tw-backdrop-brightness: ;
-            --tw-backdrop-contrast: ;
-            --tw-backdrop-grayscale: ;
-            --tw-backdrop-hue-rotate: ;
-            --tw-backdrop-invert: ;
-            --tw-backdrop-opacity: ;
-            --tw-backdrop-saturate: ;
-            --tw-backdrop-sepia:
-        }
-
-        .BWabIWdbZ5qWNbPXxuBc {
-            clip: rect(0, 0, 0, 0);
-            border-width: 0;
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
-            white-space: nowrap;
-            width: 1px
-        }
-
-        .DqN_rUxOEsb6z_CRfgmX {
-            visibility: visible
-        }
-
-        .p3NM1OB16vfk_yD2siUB {
-            visibility: hidden
-        }
-
-        .l8v4j2isa_nke8SIbDQe {
-            position: static
-        }
-
-        .S7befmKAx0_HNZ296rd2 {
-            position: fixed
-        }
-
-        .iZ8W30HPRQAuO6al90LU {
-            position: absolute
-        }
-
-        .EDIXK1RoLh9IsTGzcUBT {
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: 0
-        }
-
-        .MN_MaEuEFmiXUnb4S5NS {
-            z-index: 20
-        }
-
-        ._v8hjA9ct_v6OhSQD7fC {
-            z-index: 10
-        }
-
-        .WQWl205gja8_sU0GnBOn {
-            z-index: 40
-        }
-
-        .TnQIXm76rhSCcMn8B_oh {
-            z-index: 50
-        }
-
-        .RV8RoaI_SlEMC5CEQ3ms {
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .QFns5ejNigdqXraeGkDO {
-            margin-left: .75rem;
-            margin-right: .75rem
-        }
-
-        ._MTwKeST1JpgVPLVq9Qc {
-            margin-bottom: 1rem;
-            margin-top: 1rem
-        }
-
-        .Cl7RaVW6jbggnJW_S87T {
-            margin-right: .75rem
-        }
-
-        .b7Lf_ucBvHbZEidPjF8t {
-            margin-right: .25rem
-        }
-
-        ._gmxfZ2BpOHxa6nWwqBB {
-            margin-right: .5rem
-        }
-
-        .P_IkL3rPmLoJg_v9DE3m {
-            margin-left: .25rem
-        }
-
-        .KgBTWt39fdiAC__YVNt8 {
-            margin-top: 1rem
-        }
-
-        .show {
-            display: block
-        }
-
-        .in-block {
-            display: inline-block
-        }
-
-        .d-flex {
-            display: flex
-        }
-
-        .d-in-flex {
-            display: inline-flex
-        }
-
-        .d-table {
-            display: table
-        }
-
-        .hide {
-            display: none
-        }
-
-        .h-half-rem {
-            height: 1.5rem
-        }
-
-        .h-double-rem {
-            height: 2rem
-        }
-
-        .RRXFBumaW2SHdseZaWm6 {
-            height: 1.25rem
-        }
-
-        .nLhohPz5FpffXM9RSdFT {
-            width: 1.5rem
-        }
-
-        ._vZPglRSyqi4oTXg5L1_ {
-            width: 2rem
-        }
-
-        .R1IlbYMn17w0PrCszaYh {
-            width: 14rem
-        }
-
-        .eUuXwBkW5W4__eatjSfd {
-            width: 1.25rem
-        }
-
-        .jCISvWkW5oStPH6Wrb_H {
-            width: 100%
-        }
-
-        .HV01LldvyEqRHHy0hljF {
-            max-width: 1280px
-        }
-
-        .si0W4yw4peoOpbmHOl83 {
-            --tw-translate-x: -100%
-        }
-
-        ._txZr_XzKh1AA2GR58P5,
-        .si0W4yw4peoOpbmHOl83 {
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-        }
-
-        ._txZr_XzKh1AA2GR58P5 {
-            --tw-translate-x: 100%
-        }
-
-        ._0PJkI8eA25FIbUKfI1v {
-            --tw-translate-x: 0px
-        }
-
-        .R4jqCxTOcV8d4zX2X0UZ,
-        ._0PJkI8eA25FIbUKfI1v {
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-        }
-
-        .R4jqCxTOcV8d4zX2X0UZ {
-            --tw-rotate: 180deg
-        }
-
-        .B_Mg78Zl0_AuSOcVLMGS {
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-        }
-
-        .ZX7qzV1oJ_KQBquXp5_Q {
-            resize: both
-        }
-
-        .Ot3uWqtdhT0fChobKrSi {
-            list-style-type: none
-        }
-
-        .BrSO24r_jx46AXZOyBJR {
-            flex-direction: column
-        }
-
-        .SaxexKs0G0X_YQvtMxF3 {
-            flex-wrap: wrap
-        }
-
-        .__9yfFbPJuEYWBMy4kA9 {
-            align-items: flex-start
-        }
-
-        .lVQPxqiFn6y3l0wFmENY {
-            align-items: flex-end
-        }
-
-        .neyUwteEn7DOg9pBSJJE {
-            align-items: center
-        }
-
-        .XxgUTioBuGwyj4B5LVWV {
-            justify-content: flex-start
-        }
-
-        .dUL_Hau4P0N4IUPoUXEX {
-            justify-content: flex-end
-        }
-
-        ._WclR59Ji8jwfmjPtOei {
-            justify-content: center
-        }
-
-        ._T15kfOPGkvwZnqhqKce {
-            justify-content: space-between
-        }
-
-        .FQJBolKGENZMnnBWg95Y>:not([hidden])~:not([hidden]) {
-            --tw-divide-y-reverse: 0;
-            border-bottom-width: calc(1px*var(--tw-divide-y-reverse));
-            border-top-width: calc(1px*(1 - var(--tw-divide-y-reverse)))
-        }
-
-        ._JhddqALGzNXF3JHzSyG>:not([hidden])~:not([hidden]) {
-            --tw-divide-opacity: 1;
-            border-color: rgb(243 244 246/var(--tw-divide-opacity))
-        }
-
-        .dNzAVbf73rfV8iSOvOJV {
-            align-self: center
-        }
-
-        ._rcC9UE5QqF6embEYjq4 {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap
-        }
-
-        .b8ZffOVbGm2yi3A6gDUi {
-            white-space: nowrap
-        }
-
-        ._Qk4_E9_iLqcHsRZZ4ge {
-            border-radius: .5rem
-        }
-
-        .n8e6ORKgPTnY6zgs5HS7 {
-            border-radius: 9999px
-        }
-
-        .YPSoR6AXtPgkmylUmcbT {
-            border-radius: .25rem
-        }
-
-        .umaBek2qJLzF9vdDPtgc {
-            border-bottom-width: 1px
-        }
-
-        .vTS4HoJjOO7n6AG2y_1X {
-            --tw-border-opacity: 1;
-            border-color: rgb(28 100 242/var(--tw-border-opacity))
-        }
-
-        ._E_ViFGlEBUTz0Br1F1a {
-            --tw-border-opacity: 1;
-            border-color: rgb(243 244 246/var(--tw-border-opacity))
-        }
-
-        .pxHuWvF853ck68OLN6ef {
-            --tw-border-opacity: 1;
-            border-color: rgb(229 231 235/var(--tw-border-opacity))
-        }
-
-        ._iRPzRRWy2UNkvZFG8iO {
-            --tw-bg-opacity: 1;
-            background-color: rgb(243 244 246/var(--tw-bg-opacity))
-        }
-
-        .yjGyQxv8jnYk9_MGMqLN {
-            --tw-bg-opacity: 1;
-            background-color: rgb(255 255 255/var(--tw-bg-opacity))
-        }
-
-        .b09gYy3albM7wXTWJAII {
-            background-color: hsla(0, 0%, 100%, .5)
-        }
-
-        .J_ldU2ISOuzV8yupuBpE {
-            --tw-bg-opacity: 1;
-            background-color: rgb(17 24 39/var(--tw-bg-opacity))
-        }
-
-        .lDi6UQBCM02SDQkJikfb {
-            --tw-bg-opacity: 1;
-            background-color: rgb(31 41 55/var(--tw-bg-opacity))
-        }
-
-        .F6maSyXBC_uv_A_dciar {
-            --tw-bg-opacity: 0.5
-        }
-
-        .Y34SQMYAJVIAdOFKA3gG {
-            padding: .5rem
-        }
-
-        .veFXkDzfJN473U3ycrV8 {
-            padding-left: 1rem;
-            padding-right: 1rem
-        }
-
-        ._gKcj49wZgnwx1LpcJi6 {
-            padding-bottom: .625rem;
-            padding-top: .625rem
-        }
-
-        .zhRMeqbg7JsftloqW_W6 {
-            padding-bottom: .5rem;
-            padding-top: .5rem
-        }
-
-        .MQMN74ivNmI6x68DZajA {
-            padding-left: .75rem;
-            padding-right: .75rem
-        }
-
-        ._Masco_7wTrd3Tc0qjp9 {
-            padding-bottom: .75rem;
-            padding-top: .75rem
-        }
-
-        .e6xSuaqE4UvMawjVXuq_ {
-            padding-bottom: .25rem;
-            padding-top: .25rem
-        }
-
-        .reAJ_nOWATzan3NC80sz {
-            padding-right: 1rem
-        }
-
-        ._mzhSDAYlA3W05MgSqAf {
-            padding-left: .75rem
-        }
-
-        .uyo8h_4Kh1IoUwm8bwJI {
-            font-size: 1.25rem;
-            line-height: 1.75rem
-        }
-
-        .MxG1ClE4KPrIvlL5_Q5x {
-            font-size: .875rem;
-            line-height: 1.25rem
-        }
-
-        .osxEM2eQc4Pc_arzCZsv {
-            font-size: 1rem;
-            line-height: 1.5rem
-        }
-
-        .LYMps1kO2vF8HBymW3az {
-            font-weight: 600
-        }
-
-        ._A6LflweZRUwrcL6M2Tk {
-            font-weight: 500
-        }
-
-        .XdjN1uxS_rsa3F90ox40 {
-            font-weight: 300
-        }
-
-        .g3OYBOqwXUEW4dRGogkH {
-            --tw-text-opacity: 1;
-            color: rgb(17 24 39/var(--tw-text-opacity))
-        }
-
-        .K1PPCJwslha8GUIvV_Cr {
-            --tw-text-opacity: 1;
-            color: rgb(107 114 128/var(--tw-text-opacity))
-        }
-
-        ._Il9cmobGAOeKlZtFmMF {
-            --tw-text-opacity: 1;
-            color: rgb(28 100 242/var(--tw-text-opacity))
-        }
-
-        .wP9HMsqy6b96l2HBRbgb {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255/var(--tw-text-opacity))
-        }
-
-        .rZZ58B08lxezTX7iNgGT {
-            --tw-text-opacity: 1;
-            color: rgb(156 163 175/var(--tw-text-opacity))
-        }
-
-        .jJJfWn8GV_ODBSwRp2nH {
-            --tw-text-opacity: 1;
-            color: rgb(55 65 81/var(--tw-text-opacity))
-        }
-
-        .AtHBVur__RVIv6BHiI4a {
-            opacity: 0
-        }
-
-        .sP7SKS6_gloe57qoEglY {
-            opacity: 1
-        }
-
-        .ltPMSn_g3PKyqeS8vmZk {
-            --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
-            --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color)
-        }
-
-        .lhxYQ_2y3sYNN3W1V_3q,
-        .ltPMSn_g3PKyqeS8vmZk {
-            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-        }
-
-        .lhxYQ_2y3sYNN3W1V_3q {
-            --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
-            --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)
-        }
-
-        .ClETfzy1YZDVXhnOVdgH {
-            --tw-blur: blur(8px)
-        }
-
-        .ClETfzy1YZDVXhnOVdgH,
-        .__l7tEsuvTIL_QRvY8sk {
-            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
-        }
-
-        .yvRWkoRx_Apshie5g15o {
-            transition-duration: .15s;
-            transition-property: all;
-            transition-timing-function: cubic-bezier(.4, 0, .2, 1)
-        }
-
-        .M4SAv60iaayh2_Cd_QyF {
-            transition-duration: .15s;
-            transition-property: opacity;
-            transition-timing-function: cubic-bezier(.4, 0, .2, 1)
-        }
-
-        .KB__y25H2tVACg2mjb4C {
-            transition-duration: .3s
-        }
-
-        .eDMjESQlWdM_rnQCcLPF {
-            transition-timing-function: cubic-bezier(0, 0, .2, 1)
-        }
-
-        .eFVdWe3MNoaU5uHcs1ZL:hover {
-            --tw-border-opacity: 1;
-            border-color: rgb(209 213 219/var(--tw-border-opacity))
-        }
-
-        .djld5jFcbPSy1YdGoI7k:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(255 255 255/var(--tw-bg-opacity))
-        }
-
-        .yFAsiu26MUcycUf9RwrL:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(249 250 251/var(--tw-bg-opacity))
-        }
-
-        .DpMPWwlSESiYA8EE1xKM:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(243 244 246/var(--tw-bg-opacity))
-        }
-
-        ._be7gCNOq8vw6dPtYNE0:hover {
-            --tw-text-opacity: 1;
-            color: rgb(28 100 242/var(--tw-text-opacity))
-        }
-
-        .__3D_PX_oiQ5jff3N7d8:hover {
-            --tw-text-opacity: 1;
-            color: rgb(75 85 99/var(--tw-text-opacity))
-        }
-
-        .qHIOIw8TObHgD3VvKa5x:focus {
-            outline: 2px solid transparent;
-            outline-offset: 2px
-        }
-
-        ._FONMPVaCsLFJJGDaaIL:focus {
-            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color)
-        }
-
-        .X3ifvK6lzvLzkZabaIQd:focus,
-        ._FONMPVaCsLFJJGDaaIL:focus {
-            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
-        }
-
-        .X3ifvK6lzvLzkZabaIQd:focus {
-            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)
-        }
-
-        .U3OVe1TPm4IDpDE4Poa9:focus {
-            --tw-ring-opacity: 1;
-            --tw-ring-color: rgb(209 213 219/var(--tw-ring-opacity))
-        }
-
-        ._bKyZ1er5YE_NnrwOCm9:focus {
-            --tw-ring-opacity: 1;
-            --tw-ring-color: rgb(229 231 235/var(--tw-ring-opacity))
-        }
-
-        .dark .WoQqugRcWrYbmsWhxCUr>:not([hidden])~:not([hidden]) {
-            --tw-divide-opacity: 1;
-            border-color: rgb(75 85 99/var(--tw-divide-opacity))
-        }
-
-        .dark .QMxVJsvRySu0KddzgD_I {
-            --tw-border-opacity: 1;
-            border-color: rgb(63 131 248/var(--tw-border-opacity))
-        }
-
-        .dark .hwHNwQ_6hoGR8JD6J8Zs {
-            border-color: transparent
-        }
-
-        .dark .JeVit_1klYopnNwu_8oy {
-            --tw-border-opacity: 1;
-            border-color: rgb(55 65 81/var(--tw-border-opacity))
-        }
-
-        .dark ._cpMMPjFQqjJu4i0Puod {
-            --tw-bg-opacity: 1;
-            background-color: rgb(31 41 55/var(--tw-bg-opacity))
-        }
-
-        .dark ._qJxewQ37gBGMMVf11hs {
-            background-color: rgba(31, 41, 55, .5)
-        }
-
-        .dark ._t2wg7hRcyKsNN8CSSeU {
-            --tw-bg-opacity: 1;
-            background-color: rgb(55 65 81/var(--tw-bg-opacity))
-        }
-
-        .dark .p2g35cCO8a_kmkRuY9px {
-            --tw-bg-opacity: 0.8
-        }
-
-        .dark .a0Ed69aMSu0vgf4oysz0 {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255/var(--tw-text-opacity))
-        }
-
-        .dark .eCx_6PNzncAD5yo7Qcic {
-            --tw-text-opacity: 1;
-            color: rgb(156 163 175/var(--tw-text-opacity))
-        }
-
-        .dark .np82eQRcHmtyBOYoZbWF {
-            --tw-text-opacity: 1;
-            color: rgb(63 131 248/var(--tw-text-opacity))
-        }
-
-        .dark .GbuoIVQvgE1sPez3FB0O:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(31 41 55/var(--tw-bg-opacity))
-        }
-
-        .dark ._OovBxfPdK7Rjv2nh2Ot:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(55 65 81/var(--tw-bg-opacity))
-        }
-
-        .dark .xotVay0PVtR3gElm6ql5:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(75 85 99/var(--tw-bg-opacity))
-        }
-
-        .dark .V2alIkRVl_uBQKfQTjue:hover {
-            --tw-text-opacity: 1;
-            color: rgb(63 131 248/var(--tw-text-opacity))
-        }
-
-        .dark ._VCO84hOChxSw1A3KE3f:hover {
-            --tw-text-opacity: 1;
-            color: rgb(209 213 219/var(--tw-text-opacity))
-        }
-
-        .dark .DTyjKhtXBNaebZa5L0l9:hover {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255/var(--tw-text-opacity))
-        }
-
-        .dark .dL828_bWYVzgFnPVtC_D:focus {
-            --tw-ring-opacity: 1;
-            --tw-ring-color: rgb(31 41 55/var(--tw-ring-opacity))
-        }
-
-        .dark .P53YJBBtllZv8_nFHFHW:focus {
-            --tw-ring-opacity: 1;
-            --tw-ring-color: rgb(75 85 99/var(--tw-ring-opacity))
-        }
-
-        @media (min-width: 640px) {
-            .YfzLSd3rpFqGnHJwRwkW {
-                height: 2.25rem
-            }
-        }
-
-        @media (min-width: 768px) {
-            .CDfgyNLdnBv_I9vRq1am {
-                margin-right: 0
-            }
-        }
-
-        @media (min-width: 1024px) {
-            ._GZsiNCqsrFLCzwvCob5 {
-                order: 2
-            }
-
-            .d9DrQGZXvYcO_IWUhNZY {
-                order: 1
-            }
-
-            .mAqKHg4Y4iaXpawomIuv {
-                margin-left: .75rem
-            }
-
-            .bFw6_PuBdnL4xhqF70MG {
-                margin-top: 0
-            }
-
-            .s39ClfdnICIuO9QZ5YG_ {
-                display: flex
-            }
-
-            .wTXS_rY4vMYop_O1WHt4 {
-                display: inline-flex
-            }
-
-            .h8gF_NZYDOJSgLV1azfd {
-                display: none
-            }
-
-            .x16RiZy31Lz8xj1p8DTg {
-                width: auto
-            }
-
-            .aXohCatq2P98Q80o4vdb {
-                flex-direction: row
-            }
-
-            .ORu_LwDmRLM0RR7ijLIz>:not([hidden])~:not([hidden]) {
-                --tw-space-x-reverse: 0;
-                margin-left: calc(2rem*(1 - var(--tw-space-x-reverse)));
-                margin-right: calc(2rem*var(--tw-space-x-reverse))
-            }
-
-            .EUfBB_khU9dvwV6ZKXFW {
-                border-width: 0
-            }
-
-            .L0SUx_KDTvr32_8Z3m3b {
-                padding: 0
-            }
-
-            .sfxzXnWHolluRGSsbMHw {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem
-            }
-
-            .WspMO_OfyhdWZD4zvJ_5 {
-                padding-left: 1.25rem;
-                padding-right: 1.25rem
-            }
-
-            .XQylmKmobxTQrqDKzUv0 {
-                padding-bottom: .625rem;
-                padding-top: .625rem
-            }
-
-            .nEIBvTQwmNHV8xGDMEIJ {
-                padding-bottom: .5rem;
-                padding-top: .5rem
-            }
-
-            .dark .L5mYl8DlLZlLZADU5wN9:hover,
-            .rTxHZDLUZqxAhUe6Wf8T:hover {
-                background-color: transparent
-            }
-
-            .dark .jZaHpqNJ0wakM95nqY0O:hover {
-                --tw-text-opacity: 1;
-                color: rgb(255 255 255/var(--tw-text-opacity))
-            }
-        }
-    </style>
 </head>
 
-<body class="zlFmyfujKXCLCPyPEOIS">
+<body class="dark:bg-gray-900 h-screen flex flex-col justify-between">
     {{template "layout/header" .}}
-    <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900" id="post_main">
-        <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+    <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-gray-200 dark:bg-gray-900 shadow-invert" id="post_main">
+        <div class="flex flex-col w-full aspect-video justify-between px-4 mx-auto max-w-screen-xl ">
+            <!-- <img class="mb-5 rounded-lg" src="/assets/blogs/{{.metadata.OgImage}}" alt="office laptop working"> -->
             <article
-                class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert subpixel-antialiased">
                 <header class="mb-4 lg:mb-6 not-format">
-                    <address class="flex items-center mb-6 not-italic">
-                        <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                            <img class="mr-4 w-16 h-16 rounded-full" src="/assets/me_raw.jpg" alt="Jese Leos">
+                    <address class="flex flex-col mb-6 not-italic select-none">
+                        <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-gray-200">
+                            <img class="mr-4 w-16 h-16 rounded-full border-2 border-blue-500 dark:grayscale" src="/assets/me_raw.jpg" alt="Jese Leos">
                             <div>
-                                <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">{{
-                                    .metadata.AuthorName}} </a>
-                                <p class="text-base font-light text-gray-500 dark:text-gray-400">Web Developer, Software
+                                <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-gray-300">
+                                    {{.metadata.AuthorName}} </a>
+                                <p class="text-base font-light text-gray-700 font-normal dark:text-gray-400">Web
+                                    Developer, Software
                                     Consultant and Blogger</p>
-                                <p class="text-base font-light text-gray-500 dark:text-gray-400"><time pubdate
-                                        datetime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
+                                <p class="text-base font-light text-gray-700 font-normal dark:text-gray-400"><time
+                                        pubdate datetime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
                             </div>
                         </div>
+
+                    <div
+                    class="flex text-align-center place-items-center md:flex-col md:w-16 pt-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 md:fixed md:top-1/3 md:left-1">
+                    <span class="select-none text-xl font-medoum">
+                        Share
+                    </span>
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/SumitJa98322380"
+                        class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-blue-200"
+                        aria-label="Twitter" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-7 h-7"
+                            style="color: #1da1f2;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path fill="currentColor"
+                                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                        </svg>
+                    </a>
+
+                    <!-- Linkedin -->
+                    <a href="www.linkedin.com/in/sumitjangirindia"
+                        class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-blue-800"
+                        aria-label="Linkedin" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-7 h-7"
+                            style="color: #0077b5;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path fill="currentColor"
+                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+                        </svg>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/sjsumitjangir"
+                        class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-blue-400"
+                        aria-label="Telegram" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="w-7 h-7"
+                            style="color: #0088cc;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path fill="currentColor"
+                                d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z" />
+                        </svg>
+                    </a>
+
+                    <!-- Whatsapp -->
+                    <a href="https://chat.whatsapp.com/EPkXiY5WUBhHcuvEYbkPC6"
+                        class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-green-500"
+                        aria-label="Whatsapp" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-7 h-7"
+                            style="color: #128c7e;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path fill="currentColor"
+                                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                        </svg>
+                    </a>
+
+                </div>
                     </address>
                     <h1
-                        class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+                        class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-gray-300">
                         {{ .metadata.Title }}</h1>
                 </header>
-
-                {{.Content}}
-
-                <section class="not-format">
-                    <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion (20)</h2>
-                    </div>
-                    <form class="mb-6">
-                        <div
-                            class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-                            <label for="comment" class="sr-only">Your comment</label>
-                            <textarea id="comment" rows="6"
-                                class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
-                                placeholder="Write a comment..." required></textarea>
-                        </div>
-                        <button type="submit"
-                            class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                            Post comment
-                        </button>
-                    </form>
-                    <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
-                        <footer class="flex justify-between items-center mb-2">
-                            <div class="flex items-center">
-                                <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
-                                        class="mr-2 w-6 h-6 rounded-full" src="/assets/profile-picture-2.jpg"
-                                        alt="Michael Gough">Michael Gough</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
-                                        title="February 8th, 2022">Feb. 8, 2022</time></p>
-                            </div>
-                            <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
-                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                                type="button">
-                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
-                                    </path>
-                                </svg>
-                                <span class="sr-only">Comment settings</span>
-                            </button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdownComment1"
-                                class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                    aria-labelledby="dropdownMenuIconHorizontalButton">
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </footer>
-                        <p>Very straight-to-point article. Really worth time reading. Thank you! But tools are just the
-                            instruments for the UX designers. The knowledge of the design tools are as important as the
-                            creation of the design strategy.</p>
-                        <div class="flex items-center mt-4 space-x-4">
-                            <button type="button"
-                                class="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
-                                <svg aria-hidden="true" class="mr-1 w-4 h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                    </path>
-                                </svg>
-                                Reply
-                            </button>
-                        </div>
-                    </article>
-                    <article class="p-6 mb-6 ml-6 lg:ml-12 text-base bg-white rounded-lg dark:bg-gray-900">
-                        <footer class="flex justify-between items-center mb-2">
-                            <div class="flex items-center">
-                                <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
-                                        class="mr-2 w-6 h-6 rounded-full" src="/assets/profile-picture-5.jpg"
-                                        alt="Jese Leos">Jese Leos</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-12"
-                                        title="February 12th, 2022">Feb. 12, 2022</time></p>
-                            </div>
-                            <button id="dropdownComment2Button" data-dropdown-toggle="dropdownComment2"
-                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                                type="button">
-                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
-                                    </path>
-                                </svg>
-                                <span class="sr-only">Comment settings</span>
-                            </button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdownComment2"
-                                class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                    aria-labelledby="dropdownMenuIconHorizontalButton">
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </footer>
-                        <p>Much appreciated! Glad you liked it ☺️</p>
-                        <div class="flex items-center mt-4 space-x-4">
-                            <button type="button"
-                                class="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
-                                <svg aria-hidden="true" class="mr-1 w-4 h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                    </path>
-                                </svg>
-                                Reply
-                            </button>
-                        </div>
-                    </article>
-                    <article
-                        class="p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                        <footer class="flex justify-between items-center mb-2">
-                            <div class="flex items-center">
-                                <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
-                                        class="mr-2 w-6 h-6 rounded-full" src="/assets/profile-picture-3.jpg"
-                                        alt="Bonnie Green">Bonnie Green</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-03-12"
-                                        title="March 12th, 2022">Mar. 12, 2022</time></p>
-                            </div>
-                            <button id="dropdownComment3Button" data-dropdown-toggle="dropdownComment3"
-                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                                type="button">
-                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
-                                    </path>
-                                </svg>
-                                <span class="sr-only">Comment settings</span>
-                            </button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdownComment3"
-                                class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                    aria-labelledby="dropdownMenuIconHorizontalButton">
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </footer>
-                        <p>The article covers the essentials, challenges, myths and stages the UX designer should
-                            consider while creating the design strategy.</p>
-                        <div class="flex items-center mt-4 space-x-4">
-                            <button type="button"
-                                class="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
-                                <svg aria-hidden="true" class="mr-1 w-4 h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                    </path>
-                                </svg>
-                                Reply
-                            </button>
-                        </div>
-                    </article>
-                    <article
-                        class="p-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                        <footer class="flex justify-between items-center mb-2">
-                            <div class="flex items-center">
-                                <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
-                                        class="mr-2 w-6 h-6 rounded-full" src="/assets/profile-picture-4.jpg"
-                                        alt="Helene Engels">Helene Engels</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-06-23"
-                                        title="June 23rd, 2022">Jun. 23, 2022</time></p>
-                            </div>
-                            <button id="dropdownComment4Button" data-dropdown-toggle="dropdownComment4"
-                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                                type="button">
-                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
-                                    </path>
-                                </svg>
-                            </button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdownComment4"
-                                class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                    aria-labelledby="dropdownMenuIconHorizontalButton">
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </footer>
-                        <p>Thanks for sharing this. I do came from the Backend development and explored some of the
-                            tools to design my Side Projects.</p>
-                        <div class="flex items-center mt-4 space-x-4">
-                            <button type="button"
-                                class="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
-                                <svg aria-hidden="true" class="mr-1 w-4 h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                    </path>
-                                </svg>
-                                Reply
-                            </button>
-                        </div>
-                    </article>
-                </section>
+                <main class="text-gray-900 dark:text-gray-400">
+                    {{.Content}}
+                </main>
             </article>
         </div>
     </main>
 
-    <aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
-        <div class="px-4 mx-auto max-w-screen-xl">
-            <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
-            <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="/assets/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
-                    </a>
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Our first office</a>
-                    </h2>
-                    <p class="mb-4 font-light text-gray-500 dark:text-gray-400">Over the past year, Volosoft has
-                        undergone many changes! After months of preparation.</p>
-                    <a href="#"
-                        class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                        Read in 2 minutes
-                    </a>
-                </article>
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="/assets/blog-2.png" class="mb-5 rounded-lg" alt="Image 2">
-                    </a>
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Enterprise design tips</a>
-                    </h2>
-                    <p class="mb-4 font-light text-gray-500 dark:text-gray-400">Over the past year, Volosoft has
-                        undergone many changes! After months of preparation.</p>
-                    <a href="#"
-                        class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                        Read in 12 minutes
-                    </a>
-                </article>
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="/assets/blog-3.png" class="mb-5 rounded-lg" alt="Image 3">
-                    </a>
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">We partnered with Google</a>
-                    </h2>
-                    <p class="mb-4 font-light text-gray-500 dark:text-gray-400">Over the past year, Volosoft has
-                        undergone many changes! After months of preparation.</p>
-                    <a href="#"
-                        class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                        Read in 8 minutes
-                    </a>
-                </article>
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="/assets/blog-4.png" class="mb-5 rounded-lg" alt="Image 4">
-                    </a>
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Our first project with React</a>
-                    </h2>
-                    <p class="mb-4 font-light text-gray-500 dark:text-gray-400">Over the past year, Volosoft has
-                        undergone many changes! After months of preparation.</p>
-                    <a href="#"
-                        class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                        Read in 4 minutes
-                    </a>
-                </article>
-            </div>
-        </div>
-    </aside>
-
-    <section class="bg-white dark:bg-gray-900">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div class="mx-auto max-w-screen-md sm:text-center">
-                <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">Sign
-                    up for our newsletter</h2>
-                <p class="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">Stay
-                    up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up
-                    with your email.</p>
-                <form action="#">
-                    <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
-                        <div class="relative w-full">
-                            <label for="email"
-                                class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email
-                                address</label>
-                            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
-                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
-                                    </path>
-                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                                </svg>
-                            </div>
-                            <input
-                                class="block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="Enter your email" type="email" id="email" required="">
-                        </div>
-                        <div>
-                            <button type="submit"
-                                class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Subscribe</button>
-                        </div>
-                    </div>
-                    <div
-                        class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300">
-                        We care about the protection of your data. <a href="#"
-                            class="font-medium text-primary-600 dark:text-primary-500 hover:underline">Read our Privacy
-                            Policy</a>.</div>
-                </form>
-            </div>
-        </div>
-    </section>
-
     {{template "layout/footer" .}}
-    <a style="position: fixed; bottom: 20px; right: 30px; z-index: 99;" href="#post_main">Go to Top</a>
+    <a style="z-index: 99;" class="fixed text-lg font-medium bottom-24 shadow rounded px-1 py-2 bg-gray-400/50 right-4"
+        href="#post_main" title="Go to top" aria-label="Go to top">
+        <span class="flex flex-col items-center text-4xl pb-2">
+            <span class="h-3">
+                ^
+            </span>
+            <span class="h-3">
+                ^
+            </span>
+            <span class="h-3">
+                ^
+            </span>
+        </span>
+    </a>
     <script src="/assets/core.js"></script>
 </body>
 

@@ -12,5 +12,7 @@ func ConfigRoute(router *gin.Engine) {
 	router.Static("/assets", "./assets")
 	// router.StaticFS("/more_static", http.Dir("my_file_system"))
 	router.StaticFile("/favicon.ico", "./resources/favicon.ico")
+	router.StaticFile("/manifest.json", "./resources/manifest.json")
+	router.StaticFile("/sw.js", "./resources/sw.js")
 	router.LoadHTMLGlob("templates/**/*.html")
 }

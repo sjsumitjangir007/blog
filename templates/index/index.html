@@ -1,14 +1,20 @@
 {{ define "index/index.html" }}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/favicon.png">
     <title>Sumit Jangir, Blog</title>
+    <meta name="title" content="Sumit Jangir, Blog" />
+    <meta name="description" content="Sumit Jangir, Blog" />
+    <meta name="theme-color" content="#000000"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="app.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="manifest" href="/assets/blogs/manifest.json">
+    <link rel="preconnect" href="https://fonts.gstatic.com" >
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -28,12 +34,13 @@
     </script>
 </head>
 
-<body class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-yellow-100/11 dark:bg-gradient-to-r dark:from-gray-400 dark:to-gray-700 dark:bg-gray-900">
-    <nav class="bg-transparent border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-700">
+<body class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-yellow-100/11 dark:bg-gradient-to-r dark:from-gray-500 dark:to-gray-700 dark:bg-gray-900 h-screen flex flex-col justify-between">
+    <nav class="bg-transparent border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-700 rounded-b-lg">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" class="inline-flex items-center bg-transparent">
                 <img src="/assets/sms_icon_favicon_transparent.svg" class="mr-3 h-6 sm:h-9" alt="Sumit Jangir, Logo" />
             </a>
+            <button id="install" class="text-cyan" >install</button>
             <div class="flex items-center lg:order-2">
                 <button id="light-theme-btn"
                     class="hidden inline-flex">
@@ -52,31 +59,9 @@
                     </svg>
                 </button>
             </div>
-            <!-- <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Company</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Marketplace</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Features</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Team</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-                    </li>
-                </ul>
-            </div> -->
         </div>
     </nav>
-    <div class="flex mt-40 flex mt-40 container mx-auto">
+    <div class="flex mt-40 flex mt-40 container mx-auto flex-grow-1 flex-col flex-grow-1">
         <div class="inline-flex flex-col rounded-xl mx-auto place-items-center p-10 shadow-4xl bg-white shadow-2xl dark:bg-gray-700">
             <a href="/" arial-label="Home">
                 <img alt="sumit jangir" src="/assets/me_raw.jpg" class="w-48 h-60 rounded-full border-8 border-white/50 -mt-40 shadow-lg dark:grayscale">
@@ -92,44 +77,17 @@
             <div
                 class="flex flex-row w-full justify-around pt-10 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
 
-                <!-- Github -->
-                <a href="#" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-black dark:hover:border-white dark:hover:bg-yellow-200 dark:focus:border-white dark:focus:bg-yellow-200" aria-label="Github" target="_blank" rel="noopener" >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="w-7 h-7"
-                        style="color: #000;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                        <path fill="currentColor"
-                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-                    </svg>
-                </a>
-
-                <!-- Google -->
-                <a href="#" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-red-500" aria-label="Github" target="_blank" rel="noopener" >
+                <!-- Google --><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <!-- <a href="#" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-red-500" aria-label="Github" target="_blank" rel="noopener" >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" class="w-7 h-7"
-                        style="color: #ea4335;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        style="color: #ea4335;">
                         <path fill="currentColor"
                             d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
                     </svg>
-                </a>
-
-                <!-- Linkedin -->
-                <a href="#" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-blue-800" aria-label="Linkedin" target="_blank" rel="noopener" >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-7 h-7"
-                        style="color: #0077b5;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                        <path fill="currentColor"
-                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
-                    </svg>
-                </a>
-
-                <!-- Telegram -->
-                <a href="#" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-blue-400" aria-label="Telegram" target="_blank" rel="noopener" >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="w-7 h-7"
-                        style="color: #0088cc;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                        <path fill="currentColor"
-                            d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z" />
-                    </svg>
-                </a>
+                </a> -->
 
                 <!-- Twitter -->
-                <a href="#" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-blue-200" aria-label="Twitter" target="_blank" rel="noopener" >
+                <a href="https://twitter.com/SumitJa98322380" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-blue-200" aria-label="Twitter" target="_blank" rel="noopener" >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-7 h-7"
                         style="color: #1da1f2;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                         <path fill="currentColor"
@@ -137,8 +95,17 @@
                     </svg>
                 </a>
 
+                <!-- Linkedin -->
+                <a href="https://www.linkedin.com/in/sumitjangirindia" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-blue-800" aria-label="Linkedin" target="_blank" rel="noopener" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-7 h-7"
+                        style="color: #0077b5;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path fill="currentColor"
+                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+                    </svg>
+                </a>
+
                 <!-- Whatsapp -->
-                <a href="#" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-green-500" aria-label="Whatsapp" target="_blank" rel="noopener" >
+                <a href="https://chat.whatsapp.com/EPkXiY5WUBhHcuvEYbkPC6" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-green-500" aria-label="Whatsapp" target="_blank" rel="noopener" >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-7 h-7"
                         style="color: #128c7e;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                         <path fill="currentColor"
@@ -146,18 +113,67 @@
                     </svg>
                 </a>
 
+                <!-- Telegram -->
+                <a href="https://t.me/sjsumitjangir" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-blue-400" aria-label="Telegram" target="_blank" rel="noopener" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="w-7 h-7"
+                        style="color: #0088cc;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path fill="currentColor"
+                            d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z" />
+                    </svg>
+                </a>
+
+                <!-- Github -->
+                <a href="https://github.com/sjsumitjangir007" class="border-2 border-transparent flex place-items-center hover:border-2 p-2 hover:rounded-full hover:border-black dark:hover:border-white dark:hover:bg-yellow-200 dark:focus:border-white dark:focus:bg-yellow-200" aria-label="Github" target="_blank" rel="noopener" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="w-7 h-7"
+                        style="color: #000;"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path fill="currentColor"
+                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                    </svg>
+                </a>
+
             </div>
         </div>
+        <hr class="w-1/2 h-1 mx-auto my-4 bg-gray-100 border-0 rounded my-10 dark:bg-gray-800 shadow-2xl shadow" />
+        <div class="flex justify-center gap-4 container mx-auto flex-wrap dark:hidden">
+            <a href="/posts" class="subpixel-antialiased bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:underline dark:underline-offset-2 hover:underline hover:underline-offset-2 font-medium text-center text-white p-5 rounded-xl text-2xl hover:shadow-xl focus:shadow-xl dark:bg-none dark:text-gray-900 dark:font-bold dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:focus:text-yellow-100 dark:hover:text-yellow-100">
+                Click here to check my blog
+            </a>
+            <a href="/contact" class="subpixel-antialiased bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:underline dark:underline-offset-2 hover:underline hover:underline-offset-2 font-medium text-center text-white p-5 rounded-xl text-2xl hover:shadow-xl focus:shadow-xl dark:bg-none dark:text-gray-900 dark:font-bold dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:focus:text-yellow-100 dark:hover:text-yellow-100">
+                Send me message
+            </a>
+        </div>
+        <div class="flex justify-center gap-4 container mx-auto flex-wrap invisible dark:visible">
+            <a href="/posts" class="subpixel-antialiased dark:underline dark:underline-offset-2 hover:underline hover:underline-offset-2 font-medium text-center p-5 rounded-xl text-2xl hover:shadow-xl focus:shadow-xl dark:font-bold dark:bg-gray-700 dark:text-yellow-100">
+                Click here to check my blog
+            </a>
+            <a href="/contact" class="subpixel-antialiased dark:underline dark:underline-offset-2 hover:underline hover:underline-offset-2 font-medium text-center p-5 rounded-xl text-2xl hover:shadow-xl focus:shadow-xl dark:font-bold dark:bg-gray-700 dark:text-yellow-100">
+                Send me message
+            </a>
+        </div>
     </div>
-    <hr class="w-1/3 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
-    <div class="flex justify-center gap-4 container mx-auto flex-wrap">
-        <a href="/posts" class="subpixel-antialiased bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:underline hover:underline-offset-2 font-medium text-center text-white p-5 rounded-xl text-2xl hover:shadow-xl focus:shadow-xl dark:bg-none dark:text-gray-700 dark:font-bold dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:focus:text-yellow-100 dark:hover:text-yellow-100">
-            Click here to check my blog
-        </a>
-        <a href="/contact" class="subpixel-antialiased bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:underline hover:underline-offset-2 font-medium text-center text-white p-5 rounded-xl text-2xl hover:shadow-xl focus:shadow-xl dark:bg-none dark:text-gray-700 dark:font-bold dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:focus:text-yellow-100 dark:hover:text-yellow-100">
-            Send me message
-        </a>
-    </div>
+  
+    <footer class="bg-transparent flex flex-grow-1 flex-wrap rounded-t-lg dark:bg-gray-800 flex items-center justify-between justify-end">
+        <p
+            class="mb-4 text-sm leading-5 text-center text-white dark:text-gray-400 mb-0 p-8 ">
+            © 2023 <a href="/" class="" target="_blank">Sumit Jangir</a>. All rights
+            reserved.
+        </p>
+        <ul class="flex justify-center items-center p-8 ">
+            <li>
+                <a href="#"
+                    class="mr-6 dark:text-gray-400 text-white">Privacy
+                    Policy</a>
+            </li>
+            <li>
+                <a href="/editor"
+                    class="mr-6 dark:text-gray-400 text-white">Editor</a>
+            </li>
+            <li>
+                <a href="/contact"
+                    class="dark:text-gray-400 text-white">Contact</a>
+            </li>
+        </ul>
+    </footer>
     <script src="/assets/core.js"></script>
     
 <script>
